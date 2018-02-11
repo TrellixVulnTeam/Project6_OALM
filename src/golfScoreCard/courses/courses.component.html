@@ -1,0 +1,7 @@
+<select *ngIf="golfCourses" [(ngModel)]="courseID" (change)="getTeeTypes(courseID)">
+  <option [value]="course.id" *ngFor="let course of golfCourses.courses">{{course.name}}</option>
+</select>
+<select *ngIf="course">
+  <option [value]="teeTypes.tee_type" *ngFor="let type of teeTypes">{{ type.tee_type }}</option>
+</select>
+<button *ngIf="teeTypes" (click)="buildCard()">GO</button>
