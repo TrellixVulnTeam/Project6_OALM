@@ -7,7 +7,7 @@ import { TeeType } from "../models/TeeType";
 @Component({
   selector: "courses-component",
   templateUrl: "./courses.component.html",
-  styleUrls: []
+  styleUrls: ["./courses.component.css"]
 })
 export class CoursesComponent implements OnInit {
 

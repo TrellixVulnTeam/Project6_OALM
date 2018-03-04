@@ -4,4 +4,4 @@
 <select *ngIf="course">
   <option [value]="teeTypes.tee_type" *ngFor="let type of teeTypes">{{ type.tee_type }}</option>
 </select>
-<button *ngIf="teeTypes" (click)="buildCard()">GO</button>
+<button class="btn btn-primary main-btn" *ngIf="teeTypes" (click)="buildCard()">GO</button>
