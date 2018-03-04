@@ -1,8 +1,8 @@
-import {Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs/Observable";
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs/Observable";
 import { GolfCourses } from "../models/GolfCourses";
-import {Course} from "../models/Course";
+import { Course } from "../models/Course";
 
 @Injectable()
 export class CoursesService {

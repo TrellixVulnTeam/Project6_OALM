@@ -6,22 +6,25 @@ import { HttpClientModule } from "@angular/common/http";
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import {environment} from "../../environments/environment";
+import {environment} from "../environments/environment";
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
-import { CoursesComponent } from "../courses/courses.component";
-import { ScorecardComponent } from "../scorecard/scorecard.component";
+import { ScorecardComponent } from "./scorecard/scorecard.component";
+import { CourseSelectionComponent} from "./course-selection/course-selection.component";
+import { WelcomeComponent } from './welcome/welcome.component';
+import { RegistrationComponent } from './registration/registration.component';
 
-import { CoursesService } from "../services/courses.service";
-
+import { CoursesService } from "./services/courses.service";
 
 @NgModule({
   declarations: [
     AppComponent,
-    CoursesComponent,
-    ScorecardComponent
+    ScorecardComponent,
+    CourseSelectionComponent,
+    WelcomeComponent,
+    RegistrationComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -30,7 +33,8 @@ import { CoursesService } from "../services/courses.service";
     NgbModule.forRoot(),
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [CoursesService],
   bootstrap: [AppComponent]

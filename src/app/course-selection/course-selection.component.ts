@@ -1,15 +1,15 @@
-import { Component, OnInit } from "@angular/core";
-import { CoursesService } from "../services/courses.service";
+import { Component, OnInit } from '@angular/core';
 import { GolfCourses } from "../models/GolfCourses";
 import { Course } from "../models/Course";
 import { TeeType } from "../models/TeeType";
+import { CoursesService } from "../services/courses.service";
 
 @Component({
-  selector: "courses-component",
-  templateUrl: "./courses.component.html",
-  styleUrls: ["./courses.component.css"]
+  selector: 'course-selection',
+  templateUrl: './course-selection.component.html',
+  styleUrls: ['./course-selection.component.css']
 })
-export class CoursesComponent implements OnInit {
+export class CourseSelectionComponent implements OnInit {
 
   golfCourses: GolfCourses;
   course: Course;
@@ -30,4 +30,5 @@ export class CoursesComponent implements OnInit {
       this.teeTypes = course.course.tee_types;
     })
   }
+
 }
