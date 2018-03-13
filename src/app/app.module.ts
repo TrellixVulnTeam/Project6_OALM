@@ -7,7 +7,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import {environment} from "../environments/environment";
+import { environment } from "../environments/environment";
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -16,18 +16,16 @@ import { ScorecardComponent } from "./scorecard/scorecard.component";
 import { CourseSelectionComponent} from "./course-selection/course-selection.component";
 import { LoginComponent } from './login/login';
 import { RegistrationComponent } from './registration/registration.component';
+import { WelcomeComponent } from "./welcome/welcome.component";
+import { NavbarComponent } from './navbar/navbar.component';
 
 import { CoursesService } from "./services/courses.service";
-import { WelcomeComponent } from './welcome/welcome.component';
+import {RoutesModule} from "./routes/routes.module";
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomeComponent },
-  { path: 'login', component: LoginComponent},
-  { path: 'registration', component: RegistrationComponent },
-  { path: 'course-selection', component: CourseSelectionComponent },
-  { path: 'scorecard/:player', component: ScorecardComponent },
   { path: '', pathMatch: 'full', redirectTo: 'welcome'},
-  { path: '**', redirectTo: 'login'},
+  { path: '**', redirectTo: 'welcome'},
 ];
 
 
@@ -38,7 +36,8 @@ const appRoutes: Routes = [
     CourseSelectionComponent,
     LoginComponent,
     RegistrationComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    NavbarComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -51,6 +50,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes
     ),
+    RoutesModule
   ],
   providers: [CoursesService],
   bootstrap: [AppComponent]
