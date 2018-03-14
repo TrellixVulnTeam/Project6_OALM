@@ -21,6 +21,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 
 import { CoursesService } from "./services/courses.service";
 import {RoutesModule} from "./routes/routes.module";
+import {AngularFontAwesomeModule} from "angular-font-awesome";
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomeComponent },
@@ -50,7 +51,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes
     ),
-    RoutesModule
+    RoutesModule,
+    AngularFontAwesomeModule
   ],
   providers: [CoursesService],
   bootstrap: [AppComponent]

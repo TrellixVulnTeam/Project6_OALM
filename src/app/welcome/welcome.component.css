@@ -1,7 +1,7 @@
 .background {
   background: url("../../assets/golf-course.jpg") no-repeat center center;
   background-size: cover;
-  height: 900px;
+  height: 1200px;
 }
 
 .main-container {
@@ -10,11 +10,12 @@
   align-items: center;
   flex-direction: column;
   background-color: whitesmoke;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   border-radius: 2px;
   height: 400px;
   margin: 100px 0 0 0;
   width: 100%;
+  padding: 20px 0;
 }
 
 .intro-container {
@@ -65,27 +66,53 @@
 }
 
 .new-game-button {
-  width: 40%;
+  width: 45%;
   background: linear-gradient(top, #8fbb2c, olivedrab);
   border: solid 1px darkolivegreen;
   color: whitesmoke;
   font-family: Comfortaa, cursive;
   font-weight: bold;
   font-size: large;
-  text-shadow: 0 -1px olivedrab;
+  text-shadow: 1.5px -1px olivedrab;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  font-style: oblique;
+}
+
+.new-game-button:hover {
+  background: linear-gradient(top, olivedrab, darkolivegreen);
+  color: white;
+  text-shadow: none;
+  box-shadow: none;
 }
 
 .continue-game-button {
-  width: 40%;
+  width: 45%;
   background: linear-gradient(top, lightsalmon, salmon);
   border: solid 1px darksalmon;
   color: whitesmoke;
   font-family: Comfortaa, cursive;
   font-weight: bold;
   font-size: large;
-  text-shadow: 0 -1px salmon;
+  text-shadow: 1.5px -1px salmon;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  font-style: italic;
+}
+
+.continue-game-button:hover {
+  background: linear-gradient(top, salmon, #c76666);
+  border: #c76666;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+@media only screen and (max-width: 1200px) {
+  .new-game-button {
+    font-size: medium;
+  }
+
+  .continue-game-button {
+    font-size: medium;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -94,12 +121,13 @@
   }
 
   .main-container {
-    margin: 200px 0 0 0;
+    margin: 100px 0 0 0;
     height: 500px;
   }
 }
 
 @media only screen and (max-width: 850px) {
+
   .button-container {
     flex-direction: column;
     justify-content: space-around;
@@ -118,8 +146,10 @@
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
   .main-container {
-    margin: 150px 0 0 0;
+    margin: 110px 0 0 0;
+    height: 375px;
+    border-radius: 0;
   }
 }

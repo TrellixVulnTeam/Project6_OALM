@@ -1,9 +1,45 @@
-<div class="selection-container">
-  <select class="selection-box" *ngIf="golfCourses" [(ngModel)]="courseID" (change)="getTeeTypes(courseID)">
-    <option [value]="course.id" *ngFor="let course of golfCourses.courses">{{course.name}}</option>
-  </select>
-  <select class="selection-box" *ngIf="course">
-    <option [value]="teeTypes.tee_type" *ngFor="let type of teeTypes">{{ type.tee_type }}</option>
-  </select>
-  <button class="btn btn-primary main-btn" *ngIf="teeTypes" (click)="buildCard()" routerLink="/scorecard">GO</button>
+<navbar></navbar>
+
+<div class="container-fluid background">
+  <div class="row" *ngIf="golfCourses">
+    <div class="col-xs-2 col-sm-3 col-md-3 col-lg-4"></div>
+    <div class="main-container col-xs-8 col-sm-6 col-md-6 col-lg-4">
+      <div>
+        <h3>Course Selection</h3>
+      </div>
+      <div class="selection-container">
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Course</label>
+          </div>
+            <select
+              class="custom-select"
+              id="inputGroupSelect01"
+              [(ngModel)]="courseID"
+              (change)="getTeeTypes(courseID)">
+              <option [value]="course.id" *ngFor="let course of golfCourses.courses">{{ course.name }}</option>
+            </select>
+        </div>
+        <p *ngIf="golfCourses">Select your course.</p>
+
+        <div class="input-group mb-3" *ngIf="course">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect02">Tee Type</label>
+          </div>
+            <select class="custom-select selector" id="inputGroupSelect02">
+              <option [value]="teeTypes.tee_type" *ngFor="let type of teeTypes">{{ type.tee_type }}</option>
+            </select>
+        </div>
+            <p *ngIf="course">Select your tee type.</p>
+
+        <button
+          class="btn btn-default main-btn"
+          *ngIf="teeTypes"
+          (click)="buildCard()"
+          [routerLink]="['/scorecard']">Play Golf !</button>
+      </div>
+    </div>
+    <div class="col-xs-2 col-sm-3 col-md-3 col-lg-4"></div>
+  </div>
 </div>

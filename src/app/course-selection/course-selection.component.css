@@ -1,20 +1,127 @@
-.selection-container {
+.background {
+  background: url("../../assets/golf-course.jpg") no-repeat center center;
+  background-size: cover;
+  height: 1200px;
+}
+
+.main-container {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: whitesmoke;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+  height: 400px;
+  margin: 100px 0 0 0;
+  width: 100%;
+  padding: 20px 0;
+}
+
+h3 {
+  font-family: Contrail One, cursive;
+  font-size: xx-large;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+.selection-container {
+  display: flex;
+  justify-content: space-around;
   flex-direction: column;
   margin: auto;
-  background-color: black;
-  width: 50%;
+  width: 90%;
 }
 
-.selection-box {
-  width: 75%;
-  margin: auto;
-  outline: none;
+.selector {
+  display: flex;
+  flex-direction: column;
 }
+
+.input-group-text {
+  color: whitesmoke;
+  background: linear-gradient(top, #8fbb2c, olivedrab);
+  border: solid 1px darkolivegreen;
+  font-family: Comfortaa, cursive;
+  font-size: medium;
+  font-style: oblique;
+  text-shadow: 1.5px -1px olivedrab;
+}
+
+p {
+   font-family: Poiret One, cursive;
+   font-size: small;
+   font-weight: 600;
+   color: gray;
+ }
 
 .main-btn{
-  width: 100px;
+  width: 250px;
   margin: auto;
   outline: none;
+  background: linear-gradient(top, lightsalmon, salmon);
+  border: solid 1px darksalmon;
+  color: whitesmoke;
+  font-family: Comfortaa, cursive;
+  font-weight: bold;
+  font-size: large;
+  text-shadow: 1.5px -1px salmon;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  font-style: italic;
+}
+
+.main-btn:hover {
+  background: linear-gradient(top, salmon, #c76666);
+  border: #c76666;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+@media only screen and (max-width: 1200px) {
+  .new-game-button {
+    font-size: medium;
+  }
+
+  .continue-game-button {
+    font-size: medium;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .background {
+    height: 1024px;
+  }
+
+  .main-container {
+    margin: 100px 0 0 0;
+    height: 500px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+
+  .button-container {
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100px;
+  }
+
+  .new-game-button {
+    font-size: medium;
+    width: 95%;
+    margin: 0 0 0 3px;
+  }
+
+  .continue-game-button {
+    font-size: medium;
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .main-container {
+    margin: 110px 0 0 0;
+    height: 375px;
+    border-radius: 0;
+  }
 }

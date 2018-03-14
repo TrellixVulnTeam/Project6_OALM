@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'registration', component: RegistrationComponent },
   { path: 'course-selection', component: CourseSelectionComponent },
+  { path: 'scorecard', component: ScorecardComponent },
   { path: 'scorecard/:player', component: ScorecardComponent },
 ];
 
